@@ -1,0 +1,157 @@
+
+> destructuring-guide@0.0.0 all
+> npm run js && npm run ts
+
+
+> destructuring-guide@0.0.0 js
+> node js/arrays.mjs && node js/objects.mjs && node js/params.mjs && node js/pitfalls.mjs && tsx js/props.jsx
+
+form 1: 5 48
+form 1 missing: 3 16 undefined
+form 2: Sultans of Swing [ 'The Adults Are Talking', 'We Are the People', 'My Old Ways' ]
+form 2 rest is new: false 5
+form 2 empty rest: Gidin []
+form 3: My Old Ways | Gidin
+form 4: Sultans of Swing | No song
+form 4 undefined: No song
+form 4 null: null
+form 5: Sultans of Swing - Dire Straits
+form 5 missing: undefined
+form 6: Sultans of Swing 348
+form 6 old name: undefined
+form 7: false 0 Dire Straits
+form 7 undefined: 5
+form 7 null: null
+form 8: { title: 'Sultans of Swing', artist: 'Dire Straits', duration: 348 }
+form 8 is new: false song still has tags: true
+form 9: Dire Straits 1978 rock
+form 9 missing: TypeError: Cannot read properties of undefined (reading 'name')
+form 10: title -> Sultans of Swing
+form 10: artist -> Dire Straits
+form 10: duration -> 348
+form 10 missing: no lyrics
+form 11: Gidin by Peyk (12 plays)
+form 11 missing field: My Old Ways by Unknown artist (0 plays)
+form 11 no argument: undefined by Unknown artist (0 plays)
+form 11 without = {}: TypeError: Cannot destructure property 'title' of 'undefined' as it is undefined.
+form 11b: [ 'Sultans of Swing', 'The Adults Are Talking' ]
+form 12 entries: Gidin 12
+form 12 entries: My Old Ways 30
+form 12 entries: Sultans of Swing 7
+form 12 map: Gidin -> Peyk
+form 12 map: The Adults Are Talking -> The Strokes
+form 12 map: We Are the People -> Empire of the Sun
+form 12 objects: Dire Straits - Sultans of Swing
+form 12 objects: Tame Impala - My Old Ways
+pitfall 1 undefined: TypeError: Cannot destructure property 'title' of 'found' as it is undefined.
+pitfall 1 null: TypeError: Cannot destructure property 'title' of 'null' as it is null.
+pitfall 1 fix: not found
+pitfall 2: null false
+pitfall 2 fix: default-cover.png
+pitfall 3: Gidin Peyk
+pitfall 4: 2025 true
+pitfall 4 rest: changed through the copy
+pitfall 5 object: We Are the People - Empire of the Sun
+pitfall 5 array: artist = We Are the People | title = Empire of the Sun
+P1 props object: { title: 'Gidin', children: 'Peyk' }
+P1 A: <div><h2>Gidin</h2>Peyk</div>
+P1 B: <div><h2>Gidin</h2>Peyk</div>
+P2 tags:      <div><h2>Gidin</h2>Peyk</div>
+P2 attribute: <div><h2>Gidin</h2>Peyk</div>
+P2 both:      <div><h2>Gidin</h2>from tags</div>
+P3 string     : <div><h2>X</h2>Sultans of Swing</div>
+P3 number     : <div><h2>X</h2>348</div>
+P3 zero       : <div><h2>X</h2>0</div>
+P3 true       : <div><h2>X</h2></div>
+P3 false      : <div><h2>X</h2></div>
+P3 null       : <div><h2>X</h2></div>
+P3 undefined  : <div><h2>X</h2></div>
+P3 one element: <div><h2>X</h2><b>Tame Impala</b></div>
+P3 array      : <div><h2>X</h2>Gidin / My Old Ways</div>
+P3 several elements: <p>array of 3</p>
+P3 one element:      <p>object</p>
+P3 no children:      <p>undefined</p>
+P3 zero trap: <div><h2>Gidin</h2>0</div>
+P3 zero fix:  <div><h2>Gidin</h2></div>
+P3 function: <div><h2>X</h2></div>
+P3 render prop: <div><b>The Adults Are Talking</b></div>
+P4 rest: { id: 'song-1', className: 'track', 'data-plays': '12' }
+P4: <section id="song-1" class="track" data-plays="12"><h3>Gidin</h3>Peyk</section>
+P4 explicit then spread: <section class="highlight">Gidin</section>
+P4 spread then explicit: <section class="card">Gidin</section>
+P4 named prop not in rest: <section>Gidin</section>
+P4 key: <p>key: undefined, title: Gidin, &#x27;key&#x27; in props: true, keys: title</p>
+P4 key fix: <p>k1: Gidin</p>
+P5 props:    <article><header>Road trip</header><ul><li>Gidin</li><li>Sultans of Swing</li><li>My Old Ways</li></ul><footer>3 songs</footer></article>
+P5 children: <article><header>Road trip</header><ul><li>Gidin</li><li>Sultans of Swing</li><li>My Old Ways</li></ul><footer>3 songs</footer></article>
+P5 children, free shape: <article><h1>Only a title, no list</h1></article>
+P6 missing:   <p>Gidin - Unknown artist</p>
+P6 undefined: <p>Gidin - Unknown artist</p>
+P6 null:      <p>Gidin - </p>
+P6 given:     <p>Gidin - Peyk</p>
+P6 change props: <p>TypeError: Cannot assign to read only property &#x27;title&#x27; of object &#x27;#&lt;Object&gt;&#x27;</p>
+P7 no types in JS: <p>404 - PeykDire Straits</p>
+
+> destructuring-guide@0.0.0 ts
+> tsx ts/arrays.ts && tsx ts/objects.ts && tsx ts/params.ts && tsx ts/types.ts && tsx ts/props.tsx
+
+form 1: 5 48
+form 2: Sultans of Swing [ 'The Adults Are Talking', 'We Are the People', 'My Old Ways' ]
+form 3: My Old Ways | Gidin
+form 4: Sultans of Swing | No song
+form 4 null: null
+form 5: Sultans of Swing 348
+form 5 after change: 349 348
+form 6: Dire Straits Dire Straits
+form 7: false
+form 8: { title: 'Sultans of Swing', artist: 'Dire Straits', duration: 348 } 1978 2
+form 9: Dire Straits 1978 rock
+form 10: title -> Sultans of Swing
+form 10: artist -> Dire Straits
+form 10: duration -> 348
+form 10 exact: 5.8
+form 11: Gidin by Peyk (12 plays)
+form 11 missing field: My Old Ways by Unknown artist (0 plays)
+form 11 no argument: Untitled by Unknown artist (0 plays)
+form 11b: [ 'Sultans of Swing', 'The Adults Are Talking' ]
+form 12 entries: Gidin 12
+form 12 entries: My Old Ways 30
+form 12 entries: Sultans of Swing 7
+form 12 map: Gidin -> PEYK
+form 12 map: The Adults Are Talking -> THE STROKES
+form 12 map: We Are the People -> EMPIRE OF THE SUN
+form 12 objects: Dire Straits - Sultans of Swing
+form 12 objects: Tame Impala - My Old Ways
+T1: Peyk - Gidin | GIDIN
+T2 tuple: My Old Ways 31
+T2 loose: string
+T2 as const: 5 3.2666666666666666
+T3 checked: GIDIN
+T3 default: nothing queued
+T3 empty: queue is empty
+T4: 12 12
+T4 missing: undefined 0
+T5 at run time: undefined
+T5 fix: Anatolian rock
+P1 A: <div><h2>Gidin</h2>Peyk</div>
+P1 B: <div><h2>Gidin</h2>Peyk</div>
+P2 tags:      <div><h2>Gidin</h2>Peyk</div>
+P2 attribute: <div><h2>Gidin</h2>Peyk</div>
+P3 string : <div><h2>X</h2>Sultans of Swing</div>
+P3 number : <div><h2>X</h2>348</div>
+P3 false  : <div><h2>X</h2></div>
+P3 null   : <div><h2>X</h2></div>
+P3 element: <div><h2>X</h2><b>Tame Impala</b></div>
+P3 array  : <div><h2>X</h2>Gidin / My Old Ways</div>
+P3 render prop: <div><b>The Adults Are Talking</b></div>
+P4: <section id="song-1" class="track"><h3>Gidin</h3>Peyk</section>
+P4 spread then explicit: <section class="card">Gidin</section>
+P5 props:    <article><header>Road trip</header><ul><li>Gidin</li><li>Sultans of Swing</li><li>My Old Ways</li></ul><footer><em>3 songs</em></footer></article>
+P5 children: <article><h1>Road trip</h1></article>
+P6 missing:   <p>Gidin - UNKNOWN ARTIST</p>
+P6 undefined: <p>Gidin - UNKNOWN ARTIST</p>
+P6 given:     <p>Gidin - PEYK</p>
+P6 null with ??: <p>Gidin - Unknown artist</p>
+P7 ReactNode: <span title="New">Fresh release</span> <span title="New">New</span>
+P7 PropsWithChildren: <section><h2>Liked songs</h2><p>Gidin</p></section>
+P7 ComponentProps: <button type="button" disabled="" aria-label="Play Gidin">▶ Play</button>
